@@ -26,6 +26,7 @@ unzip data_object_calib.zip
 unzip data_object_image_2.zip
 unzip data_object_label_2.zip
 unzip data_object_velodyne.zip
+cp -r testing/calib training/calib
 cd training
 unzip ../planes-20180328T140017Z-001.zip
 cd ~/avod
