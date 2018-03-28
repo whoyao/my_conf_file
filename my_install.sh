@@ -1,5 +1,6 @@
 apt-get update && apt-get install tightvncserver -y
 apt-get install xfce4 -y
+apt-get install unzip -y
 apt-get install python3-pip -y
 wget "https://gist.coding.net/u/huyao/46c6059713ca4e2796dab348dfeb4f2e/raw/c285bb195ce1ecfd0bd65636a5d878ea8359c29c/xstartup"  
 mv xstartup  ~/.vnc/xstartup
@@ -16,7 +17,22 @@ cd ~/Kitti/object
 wget https://raw.githubusercontent.com/whoyao/my_conf_file/master/trainval.txt
 wget https://raw.githubusercontent.com/whoyao/my_conf_file/master/train.txt
 wget https://raw.githubusercontent.com/whoyao/my_conf_file/master/val.txt
-mkdir testing
-mkdir training
+wget kitti.is.tue.mpg.de/kitti/data_object_calib.zip
+wget kitti.is.tue.mpg.de/kitti/data_object_image_2.zip
+wget kitti.is.tue.mpg.de/kitti/data_object_label_2.zip
+wget https://github.com/whoyao/my_conf_file/raw/master/planes-20180328T140017Z-001.zip   
+wget kitti.is.tue.mpg.de/kitti/data_object_velodyne.zip
+unzip data_object_calib.zip
+unzip data_object_image_2.zip
+unzip data_object_label_2.zip
+unzip data_object_velodyne.zip
 cd training
+unzip ../planes-20180328T140017Z-001.zip
+cd ~/avod
+python scripts/preprocessing/gen_mini_batches.py
+
+
+
+
+
 
