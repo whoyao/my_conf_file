@@ -11,3 +11,12 @@ export PYTHONPATH=$PYTHONPATH:'/path/to/avod'
 export PYTHONPATH=$PYTHONPATH:'/path/to/avod/wavedata'
 sh scripts/install/build_integral_image_lib.bash
 sh avod/protos/run_protoc.sh
+mkdir -p ~/Kitti/object
+cd ~/Kitti/object
+wget https://raw.githubusercontent.com/whoyao/my_conf_file/master/trainval.txt
+wget https://raw.githubusercontent.com/whoyao/my_conf_file/master/train.txt
+wget https://raw.githubusercontent.com/whoyao/my_conf_file/master/val.txt
+mkdir testing
+mkdir training
+cd training
+
